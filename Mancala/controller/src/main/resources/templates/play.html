@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Mancala</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css"/>
+    <script data-th-inline="javascript">
+      const gameResponseData = [[${GAME_RESPONSE_DATA_KEY}]];
+    </script>
+  </head>
+  <body>
+  <div class="container">
+    <header>
+      <h1 class="header-mancala display-4">Mancala</h1>
+      <div class="status">
+        <div class="status-row">
+          <label for="game-id">Game ID: </label>
+          <span id="game-id">
+            <span th:text="${GAME_RESPONSE_DATA_KEY.uuid}"></span>
+          </span>
+        </div>
+        <div class="status-row">
+          <label>Status: </label>
+          <span id="game-status">
+            <span th:text="${GAME_RESPONSE_DATA_KEY.status}"></span>
+          </span>
+        </div>
+        <div class="status-row">
+          <label for="total-turn">Total Turns: </label>
+          <span id="total-turn">0</span>
+        </div>
+        <div class="status-row">
+          <label for="player-turn" class="status-label">Current Turn: </label>
+          <span id="player-turn"><span th:text="${GAME_RESPONSE_DATA_KEY.playerTurn}" /></span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="board-container">
+        <table class="board">
+          <tbody>
+            <tr class="player-row" id="player2-row">
+              <td colspan="8"><h3 class="player-name"><span id="player2-name" th:text="${GAME_RESPONSE_DATA_KEY.secondPlayer.name}" /></h3></td>
+            </tr>
+            <tr class="board-row">
+              <td class="large-pit" id="pit13" rowspan="3">0</td>
+              <td>
+                <button class="pit" id="pit12">6</button>
+              </td>
+              <td>
+                <button class="pit" id="pit11">6</button>
+              </td>
+              <td>
+                <button class="pit" id="pit10">6</button>
+              </td>
+              <td>
+                <button class="pit" id="pit9">6</button>
+              </td>
+              <td>
+                <button class="pit" id="pit8">6</button>
+              </td>
+              <td>
+                <button class="pit" id="pit7">6</button>
+              </td>
+              <td class="large-pit" id="pit6" rowspan="3">0</td>
+            </tr>
+            <tr class="blank-row">
+              <td colspan="6"><hr /></td>
+            </tr>
+            <tr class="board-row">
+              <td>
+                <button class="pit" id="pit0">6</button>
+              </td>
+              <td>
+                <button class="pit" id="pit1">6</button>
+              </td>
+              <td>
+                <button class="pit" id="pit2">6</button>
+              </td>
+              <td>
+                <button class="pit" id="pit3">6</button>
+              </td>
+              <td>
+                <button class="pit" id="pit4">6</button>
+              </td>
+              <td>
+                <button class="pit" id="pit5">6</button>
+              </td>
+            </tr>
+            <tr class="player-row" id="player1-row">
+              <td colspan="8"><h3 class="player-name"><span id="player1-name" th:text="${GAME_RESPONSE_DATA_KEY.firstPlayer.name}" /></h3></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  </body>
+  <script type="module" src="/js/play.js"></script>
+</html>

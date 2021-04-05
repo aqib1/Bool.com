@@ -1,0 +1,58 @@
+header {
+  text-align: center;
+  color: rgb(68, 38, 11);
+  font-family: Calibri;
+}
+.header-mancala {
+ color: #32689a;
+}
+.board {
+  border: 2px solid black;
+  border-radius: 10%;
+  background: rgb(6 213 197);
+  min-width: 400px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.player-row {
+  color: rgb(255 255 255);
+  background: rgb(13 111 99);
+  font-family: Calibri;
+}
+
+.large-pit {
+  min-width: 100px;
+  color: black;
+  background: rgb(193 228 24);
+  border: 5px solid black;
+  border-radius: 15%;
+}
+
+.pit {
+  width: 75px;
+  height: 75px;
+  color: white;
+  cursor: pointer;
+  background: rgb(13 148 0);
+  border: 2px solid black;
+  border-radius: 20%;
+}
+
+.pit:hover {
+  background: rgb(255, 187, 0);
+}
+
+.player-name {
+font-family: Calibri;
+}
+
+#player1-row td {
+  border-top: 5px solid red;
+}
+
+#player2-row td {
+  border-bottom: 5px solid red;
+}
