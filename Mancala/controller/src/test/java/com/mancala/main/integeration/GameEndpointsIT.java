@@ -104,7 +104,7 @@ public class GameEndpointsIT {
     public void testDelete() throws Exception {
         mvc.perform(delete(GAME_BASE_URL))
                 .andDo(print())
-                .andExpect(status().isCreated());
+                .andExpect(status().isNoContent());
     }
 
     private ResultActions startGame() throws Exception {
